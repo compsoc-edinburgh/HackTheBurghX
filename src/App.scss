@@ -1,11 +1,23 @@
 // General Styles for the Application
 // Uses scss for extra functionality but normal css can be used
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html{
-  background: red;
+  background: black;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .App {
-  text-align: center;
-  background: black;
+  left: 0;
+  top: 0;
+  position: absolute;
+  overflow-x: hidden;
+  width: 100vw;
+  height: auto;
 }

@@ -1,4 +1,5 @@
-
+<!-- Logo - Dosen't seem to be working -->
+<!-- ![Hack The Burgh X Logo](./public/htbxlogo.svg) -->
 
 ## Technology Stack
 
