@@ -1,6 +1,8 @@
 // General Styles for the Application
 // Uses scss for extra functionality but normal css can be used
 
+@import 'colours';
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 }
 
 html{
-  background: black;
+  background: $black;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -19,5 +21,5 @@ html{
   position: absolute;
   overflow-x: hidden;
   width: 100vw;
-  height: auto;
+  height: 100vh;
 }

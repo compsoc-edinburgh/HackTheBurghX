@@ -1,0 +1,14 @@
+@import '../../colours';
+
+.page{
+    $page-margin: 20px;
+    $page-padding: 20px;
+    $nav-height: 100px;
+
+    color: $black;
+    border: 1px solid $black;
+    width: calc(100% - $page-margin * 2);
+    height: calc(100% - $nav-height - $page-margin);
+    margin: $page-margin;
+    padding: 20px;
+}
