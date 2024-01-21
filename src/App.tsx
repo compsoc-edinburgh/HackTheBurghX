@@ -8,6 +8,7 @@ import Background from './components/Background/Background'
 import Home from './components/pages/Home/Home'
 import PastProjects from './components/pages/Past Projects/PastProjects'
 import FAQ from './components/pages/FAQ/FAQ'
+import { Game } from './components/game/components'
 
 // ---------------- Main Application Container ----------------
 
@@ -17,6 +18,7 @@ function App() {
   const [inScene, setInScene] = useState(true);
 
   const [page, setPage] = useState('Home');
+  const [shouldRestart, setShouldRestart] = useState(false);
 
   return (
     <div className="App">
@@ -34,12 +36,12 @@ function App() {
           </Background>
           <Nav page={page} setPage={setPage} />
 
-          {
-
-            page === 'Home' ? (
+          {page === 'Home' && (
+            <>
               <Home />
-              
-            ) :
+              <Game restartGame={() => setShouldRestart(true)} />
+            </>
+          )}
             page === 'Past Projects' ? (
               <PastProjects />
             ) : 
@@ -48,7 +50,7 @@ function App() {
             ) : 
 
             <> Error Page Not Found</>
-          }
+          
 
           {/* Render Popups */}
           
