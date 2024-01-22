@@ -10,16 +10,48 @@
 }
 
 html{
-  background: $black;
+  background: $white;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
-.App {
-  left: 0;
-  top: 0;
-  position: absolute;
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
+a, button{
+  outline: none;
+  background: $white2;
+  text-decoration: none;
+  color: $black;
+  border: 2px solid $brown;
+  padding: 10px 30px;
+  position: relative;
+  font-family: $main-font;
+  color: $brown;
+  margin: 10px;
+
+  &::after{
+    content: '';
+    position: absolute;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 5px;
+    left: 2px;
+    top: 2px;
+
+    opacity: 0;
+    $border-colour: rgba($blue, 1);
+    background: linear-gradient(90deg, $border-colour 50%, transparent 50%), linear-gradient(90deg, $border-colour 50%, transparent 50%), linear-gradient(0deg, $border-colour 50%, transparent 50%), linear-gradient(0deg, $border-colour 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 16px 4px, 16px 4px, 4px 16px, 4px 16px;
+    background-position: 0px 0px, 100% 100%, 0px 50%, 100% 0px;
+    transition: background-position 2s, opacity 0.3s;
+  }
+
+  &:hover{
+    
+    &::after{
+      
+      opacity: 1;
+      background-position: 100% 0px, 0px 100%, 0px 0px, 100% 100%;
+    }
+  }
 }
+

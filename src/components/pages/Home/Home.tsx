@@ -7,8 +7,8 @@ const Home: React.FC = () => {
             <p>Hack the Burgh X</p>
             <p>2-3rd March | Edinburgh, The Nucleus Building</p>
             <div className='flex gap-2'>
-                <a href="">Register</a>
-                <a href="">Join the team</a>
+                <a target='_blank' href="https://google.com">Register</a>
+                <a target='_blank' href="https://google.com">Join the team</a>
             </div>
         </div>
     );

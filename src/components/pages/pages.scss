@@ -3,12 +3,39 @@
 .page{
     $page-margin: 20px;
     $page-padding: 20px;
-    $nav-height: 100px;
+    $nav-height: 75px;
 
     color: $black;
-    border: 1px solid $black;
+    // border: 1px solid rgba($black, 0.4);
     width: calc(100% - $page-margin * 2);
     height: calc(100% - $nav-height - $page-margin);
     margin: $page-margin;
-    padding: 20px;
+    padding: $page-padding;
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar:hover {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $white;
+    }
+
+
+
+    &::-webkit-scrollbar-thumb {
+        background: $brown;
+        border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $brown;
+    }
+
 }
