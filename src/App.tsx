@@ -30,25 +30,25 @@ function App() {
         (
           <>
           <Background>
-            
+            <Nav page={page} setPage={setPage} setInScene = {setInScene} />
+
+            {
+
+              page === 'Home' ? (
+                <Home />
+                
+              ) :
+              page === 'Past Projects' ? (
+                <PastProjects />
+              ) : 
+              page === 'Information' ? (
+                <FAQ/>
+              ) : 
+
+              <> Error Page Not Found</>
+            }
+
           </Background>
-          <Nav page={page} setPage={setPage} />
-
-          {
-
-            page === 'Home' ? (
-              <Home />
-              
-            ) :
-            page === 'Past Projects' ? (
-              <PastProjects />
-            ) : 
-            page === 'Information' ? (
-              <FAQ/>
-            ) : 
-
-            <> Error Page Not Found</>
-          }
 
           {/* Render Popups */}
           

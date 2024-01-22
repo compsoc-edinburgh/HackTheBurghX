@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import './Background.scss';
 
-const Background: React.FC = () => {
-    return (
-       <div className='background'>
+interface BackgroundProps {
+    children: ReactNode;
+}
 
-       </div>
+const Background: React.FC<BackgroundProps> = (props: BackgroundProps) => {
+    return (
+        <div className="border">
+            <div className='background'>
+                {props.children}
+            </div>
+        </div>
     );
 };
 

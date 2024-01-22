@@ -4,4 +4,88 @@ nav{
     left: 0;
     top: 0;
     position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    border-bottom: 2px solid $brown;
+    padding: 0 20px;
+    height: 50px;
+    background: $yellow;
+
+    .spacer{
+        flex-grow: 1;
+    }
+
+    .logo{
+        height: 100%;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        // --- Uncomment this to have the x in a tab also
+        // justify-content: center;
+        // border-inline: 2px solid $brown;
+        // border-top: 2px solid $brown;
+        // background: $white2;
+        // border-top-right-radius: 5px;
+        // border-top-left-radius: 5px;
+        // height: 90%;
+        // padding-inline: 10px;
+
+        // &:hover{
+        //     background: $blue;
+        // }
+
+        svg{
+            width: 25px;
+            height: 25px;
+
+            // Change the colour of the x
+            path{
+                fill: $brown;
+            }
+
+            // If above code is back in comment this out
+            &:hover{
+                cursor: pointer;
+
+                path{
+                    fill: $blue;
+                }
+            }
+        }
+
+    }
+
+    .link{
+        &:after{
+            display: none;
+        }
+        border-inline: 2px solid $brown;
+        border-top: 2px solid $brown;
+        background: $white2;
+        margin: 0px;
+        border-bottom: none;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        height: 90%;
+        padding-inline: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: $main-font;
+
+        &.active{
+            background: $blue;
+        }
+
+        &:hover{
+            background: $blue;
+            cursor: pointer;
+        }
+    }
+
+   
 }
