@@ -18,7 +18,6 @@ function App() {
   const [inScene, setInScene] = useState(true);
 
   const [page, setPage] = useState('Home');
-  const [shouldRestart, setShouldRestart] = useState(false);
 
   return (
     <div className="App">
@@ -39,7 +38,7 @@ function App() {
             page === 'Home' ? (
               <>
                 <Home />
-                <Game restartGame={() => setShouldRestart(true)} />
+                
               </>
               
             ) :
