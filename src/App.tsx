@@ -34,21 +34,24 @@ function App() {
           <Background>
             <Nav page={page} setPage={setPage} setInScene = {setInScene} />
 
-            {
+          {
 
-              page === 'Home' ? (
+            page === 'Home' ? (
+              <>
                 <Home />
-                
-              ) :
-              page === 'Past Projects' ? (
-                <PastProjects />
-              ) : 
-              page === 'Information' ? (
-                <FAQ/>
-              ) : 
+                <Game restartGame={() => setShouldRestart(true)} />
+              </>
+              
+            ) :
+            page === 'Past Projects' ? (
+              <PastProjects />
+            ) : 
+            page === 'Information' ? (
+              <FAQ/>
+            ) : 
 
-              <> Error Page Not Found</>
-            }
+            <> Error Page Not Found</>
+          }
 
           </Background>
 
