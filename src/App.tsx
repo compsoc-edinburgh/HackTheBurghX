@@ -37,7 +37,10 @@ function App() {
           {
 
             page === 'Home' ? (
-              <Home />
+              <>
+                <Home />
+                <Game restartGame={() => setShouldRestart(true)} />
+              </>
               
             ) :
             page === 'Past Projects' ? (
