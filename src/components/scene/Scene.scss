@@ -1,3 +1,5 @@
+@import "../../colours";
+
 canvas {
     position: relative;
     left: 0;
@@ -6,9 +8,8 @@ canvas {
     z-index: 10;
 }
     
-
 .scene-logo {
-    color: black;
+    color: $black;
     font-size: 20px;
     position: absolute;
     top: 50%;
@@ -20,7 +21,7 @@ canvas {
 }
 
 .scene-logo-text {
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px $black;
     font-family: 'Silkscreen', sans-serif;
 }
 

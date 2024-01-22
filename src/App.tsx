@@ -32,16 +32,13 @@ function App() {
         (
           <>
           <Background>
-            
-          </Background>
-          <Nav page={page} setPage={setPage} />
+            <Nav page={page} setPage={setPage} setInScene = {setInScene} />
 
           {
+
             page === 'Home' ? (
-              <>
-                <Home />
-                <Game restartGame={() => setShouldRestart(true)} />
-              </>
+              <Home />
+              
             ) :
             page === 'Past Projects' ? (
               <PastProjects />
@@ -49,9 +46,11 @@ function App() {
             page === 'Information' ? (
               <FAQ/>
             ) : 
-            <>Error Page Not Found</>
+
+            <> Error Page Not Found</>
           }
-          
+
+          </Background>
 
           {/* Render Popups */}
           

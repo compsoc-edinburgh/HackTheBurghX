@@ -1,34 +1,46 @@
-import React from 'react';
-import './Nav.scss';
-import Logo from './Logo';
+import React from "react";
+import "./Nav.scss";
+import Logo from "./Logo";
 
 type Link = {
-    title: string,
-    href: string
-}
+  title: string;
+  href: string;
+};
 
 type NavProps = {
-    page : any,
-    setPage: any,
-}
+  page: any;
+  setPage: any;
+setInScene: any;
+};
 
-const Nav = ({page, setPage} : NavProps) => {
-    const links: Link[] = [
-        {title: 'Home', href: '/home'},
-        {title: 'Past Projects', href: '/past-projects'},
-        {title: 'Information', href: '/information'},
-    ];
+const Nav = ({ page, setPage, setInScene }: NavProps) => {
+  const links: Link[] = [
+    { title: "Home", href: "/home" },
+    { title: "Past Projects", href: "/past-projects" },
+    { title: "Information", href: "/information" },
+  ];
 
-    return (
-       <nav className={`w-full h-20 bg-[#FFF9DE] flex gap-4 items-center border-b shadow px-12`}>
-        <div className='w-8'>
+  return (
+    <nav>
+      {links.map((link, idx) => (
+        <a
+          key={idx}
+          onClick={() => setPage(link.title)}
+          className={`link ${
+            page == link.title ? "active" : ""
+          }`}
+        >
+          {link.title}
+        </a>
+      ))}
+
+      <div className="spacer"></div>
+      
+      <div onClick={() => setInScene(true)} className="logo">
         <Logo />
-        </div>
-        {links.map((link, idx) => <a key={idx} onClick={() => setPage(link.title)} className={`text-xl font-medium cursor-pointer ${
-            page == link.title ? 'border-b' : ''
-        }`}>{link.title}</a>)}
-       </nav>
-    );
+      </div>
+    </nav>
+  );
 };
 
 export default Nav;

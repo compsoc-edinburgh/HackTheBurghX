@@ -108,7 +108,7 @@ const Scene: React.FC<SceneProps> = ({ width, height, setInScene }) => {
                     i++;
 
                     // Set timeout for the next character
-                    setTimeout(typing, 100);
+                    setTimeout(typing, 50);
                 }
                 else if (i == txt.length){
 
