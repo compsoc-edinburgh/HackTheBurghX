@@ -25,7 +25,7 @@ function App() {
       {
         inScene ? (
 
-          <Scene width={window.innerWidth} height={window.innerHeight} setInScene={setInScene}></Scene>
+          <Scene  setInScene={setInScene}></Scene>
 
         ) :
         (

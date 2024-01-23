@@ -36,6 +36,24 @@ canvas {
     animation: pulse 1.5s infinite;
 }
 
+@media(max-width: 600px) {
+    .scene-logo {
+        font-size: 40px;
+    }
+    .scene-begin-text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .scene-logo {
+        font-size: 31px;
+    }
+    .scene-begin-text {
+        font-size: 15px;
+    }
+}
+
 @keyframes pulse {
     0% {
         opacity: 0.5;

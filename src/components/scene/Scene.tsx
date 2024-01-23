@@ -4,173 +4,230 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import computer from '../../assets/computer.glb';
 import './Scene.scss';
 
-// Scene Component for the opening scene
-
-// Background colours can be changed in Scene.scss by changing the background colour of the .scene-background class
-// Computer screen colour can only be changed by changing the 3d model in blender
-// Text colours can be changed in Scene.scss by changing the colour of the .scene-logo-text and .scene-begin-text classes
-
 interface SceneProps {
-    width: number;
-    height: number;
     setInScene: any;
 }
 
-const Scene: React.FC<SceneProps> = ({ width, height, setInScene }) => {
+const Scene: React.FC<SceneProps> = ({ setInScene }) => {
 
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    var zoom = false;
+    var cameraZ = 0.8;
+    var zoomSpeed = 0.005;
 
-    useEffect(() => {
+    let typingSpeed = 50 ;
+
+    const [sceneWidth, setSceneWidth] = useState(window.innerWidth);
+    const [sceneHeight, setSceneHeight] = useState(window.innerHeight);
+
+    // Get the aspect ratio of the screen
+    const aspectRatio = sceneWidth / sceneHeight;
+
+    var scales = getScales(sceneWidth, sceneHeight);
+
+    const [scaleX, setScaleX] = useState(scales.scaleX);
+    const [scaleY, setScaleY] = useState(scales.scaleY);
+
+    var isTyping = false;
+    var isText = false;
+
+    let resizeTimeout: any;
+
+    const handleResize = () => {
         if (canvasRef.current) {
 
-            var cameraZ = 0.45;
+            clearTimeout(resizeTimeout);
 
-            let isTyping = true;
-            let isText = false;
+            resizeTimeout = setTimeout(() => {
+                setSceneWidth(window.innerWidth);
+                setSceneHeight(window.innerHeight);
 
+                scales = getScales(window.innerWidth, window.innerHeight);
+
+                setScaleX(scales.scaleX);
+                setScaleY(scales.scaleY);
+
+            }, 1000);
+        }
+    };
+
+    let zoom = false;
+
+    let i = 0;
+    let cutofIndex = 18;
+    const txt = 'Hack the Burgh\n2024\nPress any key to begin...';
+
+    var sceneBeginTextElement = document.getElementById("scene-begin-text");
+    var sceneLogoElement = document.getElementById("scene-logo-text");
+
+    let typingTimeout: any;
+    let characterTimeout: any;
+
+    const startTyping = () => {
+
+        console.log('start typing')
+
+        sceneBeginTextElement = document.getElementById("scene-begin-text");
+        sceneLogoElement = document.getElementById("scene-logo-text");
+
+        if (sceneLogoElement && sceneBeginTextElement){
+
+            clearTimeout(typingTimeout);
+
+            typingTimeout = setTimeout(() => {
+
+                console.log('start typing timeout')
+
+                clearTimeout(characterTimeout);
+
+                // @ts-ignore
+                sceneLogoElement.innerHTML = "";
+                // @ts-ignore
+                sceneBeginTextElement.innerHTML = "";
+
+                typing();
+
+            }, 500);
+            
+           
+        }
+        else {
+            setTimeout(startTyping, 500);
+        }
+
+    }
+
+    const typing = () => {
+
+        isTyping = true;
+
+        if (
+            sceneLogoElement 
+            && sceneBeginTextElement
+            && i < txt.length
+            ){
+            
+            // Determine what text from the string goes to each element
+            if (i > cutofIndex){
+                sceneBeginTextElement.innerHTML += txt.charAt(i);
+            }
+            else {
+                sceneLogoElement.innerHTML += txt.charAt(i);
+            }
+
+            i++;
+
+            // Set timeout for the next character
+            characterTimeout = setTimeout(typing, typingSpeed);
+        }
+        else if (i == txt.length){
+
+            // Typing completed
+            isTyping = false;
+            isText = true;  
+            sceneBeginTextElement?.classList.add('active');
+
+
+        }
+    }
+    
+    // Function to delete the text from the screen when the user clicks or presses a key
+    const deleteText = () => {
+
+        // Remove the smaller text from the screen
+        if (sceneBeginTextElement && isTyping == false){
+            sceneBeginTextElement.style.opacity = "0";
+            sceneBeginTextElement.style.animation = "none";
+        }
+        
+        isTyping = true;
+
+        // Remove the logo text from the screen the same style as it was added
+        if (sceneLogoElement && cutofIndex > 0){
+
+            sceneLogoElement.innerHTML = sceneLogoElement.innerHTML.slice(0, -1);
+            cutofIndex--;
+
+        }
+        else {
+            isTyping = false;
+            isText = false;
+        }
+    }
+
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        renderScene();
+    }, [sceneWidth, sceneHeight]);
+
+    const renderScene = () => {
+
+        if (canvasRef.current) {
+    
             const scene = new THREE.Scene();
-
-            const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-            camera.position.setZ(0.45);
-
+    
+            const camera = new THREE.PerspectiveCamera(75, sceneWidth / sceneHeight, 0.1, 1000);
+            camera.position.setZ(cameraZ);
+    
             const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
             renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(width, height);
-
+            renderer.setSize(sceneWidth, sceneHeight);
+    
             const pointLight = new THREE.PointLight(0xffffff, 1);
             pointLight.position.set(0, 0.3, 1);
             scene.add(pointLight);
-
-            // Add orbit controls
-            // const controls = new OrbitControls(camera, renderer.domElement);
-
-            // set the background of the canvas to transparent
+    
             renderer.setClearColor(0x000000, 0);
-           
-            // If the user clicks or presses a key, zoom in to the screen
+
             const handlezoom = () => {
                 if (!isTyping){
                     zoom = true;
                 }
             };
+
             window.addEventListener('keypress', handlezoom);
             canvasRef.current.addEventListener('click', handlezoom);
-
-            // Load the computer .glb file into the scene
+            
+             // Load the computer .glb file into the scene
             const loader = new GLTFLoader();
             loader.load(computer, (computer: any) => {
 
-                computer.scene.position.set(0, -0.2935, 0);
+                computer.scene.position.set(0, (scaleY * -0.3), 0);
 
-                computer.scene.scale.set(1.2,1, 1);
+                computer.scene.scale.set(scaleX, scaleY, 1);
 
                 scene.add(computer.scene);
 
             }, () => {
-                console.log("Object in scene")
+                // object in scene
             });
-
-            // Typing Animation Declearations
-            // Logo represents the main text
-            // Begin represents the smaller text below the logo
-            let i: number = 0;
-            let j: number = 16;
-            const txt = 'Hack the Burgh\n2024\nPress any key to begin...';
-            const sceneBeginTextElement = document.getElementById("scene-begin-text");
-            const sceneLogoElement = document.getElementById("scene-logo-text");
-
-            // Remove the text from the screen to begin with
-            if (sceneLogoElement && sceneBeginTextElement){
-                sceneLogoElement.innerHTML = "";
-                sceneBeginTextElement.innerHTML = "";
-            }
-
-            // Animation for typing out both the logo and the begin text
-            const typing = () => {
-                isTyping = true;
-                if (
-                    sceneLogoElement 
-                    && sceneBeginTextElement
-                    && i < txt.length
-                    && sceneLogoElement.innerHTML.charAt(sceneLogoElement.innerHTML.length-1) != txt.charAt(i)
-                    ){
-                    
-                    // Determine what text from the string goes to each element
-                    if (i > 18){
-                        sceneBeginTextElement.innerHTML += txt.charAt(i);
-                    }
-                    else {
-                        sceneLogoElement.innerHTML += txt.charAt(i);
-                    }
-
-                    i++;
-
-                    // Set timeout for the next character
-                    setTimeout(typing, 50);
-                }
-                else if (i == txt.length){
-
-                    // Typing completed
-                    isTyping = false;
-                    isText = true;  
-                    sceneBeginTextElement?.classList.add('active');
-                }
-            }
-            
-            // Function to delete the text from the screen when the user clicks or presses a key
-            const deleteText = () => {
-
-                // Remove the smaller text from the screen
-                if (sceneBeginTextElement && isTyping == false){
-                    sceneBeginTextElement.style.opacity = "0";
-                    sceneBeginTextElement.style.animation = "none";
-                }
-                
-                isTyping = true;
-
-                // Remove the logo text from the screen the same style as it was added
-                if (sceneLogoElement && j > 0){
-
-                    sceneLogoElement.innerHTML = sceneLogoElement.innerHTML.slice(0, -1);
-                    j--;
-
-                }
-                else {
-                    isTyping = false;
-                    isText = false;
-                }
-            }
-
-            // Main animation loop mainly for zooming
+    
+            // Main animation loop mainly for zooming 
             const animate = async () => {
-                // for orbit controls
-                // controls.update();
-
+    
                 // Zoom in to the screen on load
                 if (cameraZ > 0.4) {
-                    camera.position.setZ(cameraZ-=0.001);
+                    camera.position.setZ(cameraZ-= zoomSpeed);
                 }
-
-                // In the last frame of the zoom, start typing
-                if (cameraZ > 0.4 && cameraZ < 0.401){
-                    typing();
-                }
-
+    
                 // If the user clicks or presses a key, zoom in to the screen
                 if (zoom){
                     if (isTyping || isText){
-
+    
                         deleteText();
-
+    
                         setTimeout(() => {
                             requestAnimationFrame(animate);
                             renderer.render(scene, camera);
                         }, 50);
+
                     }
                     else {
-
+    
                         if (cameraZ > 0.15) {
                             camera.position.setZ(cameraZ-=0.005);
                         }
@@ -179,7 +236,7 @@ const Scene: React.FC<SceneProps> = ({ width, height, setInScene }) => {
                             window.removeEventListener('keypress', handlezoom);
                             setInScene(false);
                         }
-
+    
                         requestAnimationFrame(animate);
                         renderer.render(scene, camera);
                     }
@@ -189,24 +246,59 @@ const Scene: React.FC<SceneProps> = ({ width, height, setInScene }) => {
                 }
               
             };
-
+    
             animate();
 
+            startTyping();
+
         }
-    }, [width, height]);
+
+    }
+    
+    return (
+        <>
+            <div className="scene-background"></div>
+            <div className="scene-logo" id='scene-logo'>
+                <pre className="scene-logo-text" id="scene-logo-text"></pre>
+                <pre className="scene-begin-text" id='scene-begin-text'></pre>
+            </div>
+            <canvas ref={canvasRef} />;
+        </>
+    )
+}
+
+export default Scene
+
+const getScales = (sceneWidth: number, sceneHeight: number) => {
+
+    let scaleY = 1.3;
+    let scaleX = 1;
+
+    if (sceneWidth > 1500){
+        scaleX = 1.5;
+        scaleY = 1.2;
+    }
+    else if (sceneWidth > 1200){
+        scaleX = 1.5;
+        scaleY = 1.2;
+    }
+    else if (sceneWidth > 1000){
+        scaleX = 1.3;
+        scaleY = 1.0;
+    }
+    else if (sceneWidth > 600){
+        scaleX = 1.15;
+        scaleY = 0.9;
+    }
+    else if (sceneWidth > 450){
+        scaleX = 1;
+        scaleY = 0.7;
+    }
+    else {
+        scaleX = 0.8;
+        scaleY = 0.6;
+    }
 
 
-return (
-    <>
-        <div className="scene-background"></div>
-        <div className="scene-logo" id='scene-logo'>
-            <pre className="scene-logo-text" id="scene-logo-text"></pre>
-            <pre className="scene-begin-text" id='scene-begin-text'></pre>
-        </div>
-        <canvas ref={canvasRef} />;
-    </>
-)
-
-};
-
-export default Scene;
+   return {scaleX, scaleY}
+}
