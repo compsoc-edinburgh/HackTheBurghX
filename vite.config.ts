@@ -5,5 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb', '**/*.obj', '**/*.mtl'],
+  build: {
+    outDir: 'docs', // Specify the custom output directory here
+  },
 
 })
