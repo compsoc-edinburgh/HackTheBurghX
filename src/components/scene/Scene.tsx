@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+// @ts-ignore
 import computer from '../../assets/computer.glb';
 import './Scene.scss';
 
