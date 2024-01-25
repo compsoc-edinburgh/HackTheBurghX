@@ -36,7 +36,9 @@ const Nav = ({ page, setPage, setInScene }: NavProps) => {
 
       <div className="spacer"></div>
       
-      <div onClick={() => setInScene(true)} className="logo">
+      <div onClick={() => {
+        window.location.reload();
+      }} className="logo">
         <Logo />
       </div>
     </nav>

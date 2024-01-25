@@ -12,7 +12,7 @@ const Home: React.FC = () => {
             <p>2-3rd March | Edinburgh, The Nucleus Building</p>
             <div className='flex gap-2'>
                 <a target='_blank' href="https://google.com">Register</a>
-                <a target='_blank' href="https://google.com">Join the team</a>
+                <a target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSdWyk7F_E9m90cxkAr1AhJ9-xx_D5_u86ioZg8q3mawX3ydRw/viewform">Volunteer</a>
             </div>
 
             <Game restartGame={() => setShouldRestart(true)} />

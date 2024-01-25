@@ -35,7 +35,12 @@ nav{
         padding-inline: 10px;
 
         &:hover{
-            background: $blue;
+            $backgroundOpacity: 1;
+            background: repeating-linear-gradient(45deg, rgba($blue, $backgroundOpacity), rgba($blue, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 20px);
+       
+            background-size: 200% 200%;
+            animation: stripe 10s linear infinite;
+
             cursor: pointer;
         }
 
@@ -80,16 +85,36 @@ nav{
 
         &.active{
             background: $blue;
+            $backgroundOpacity: 1;
+            background: repeating-linear-gradient(45deg, rgba($blue, $backgroundOpacity), rgba($blue, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 20px);
+            background-size: 200% 200%;
+            animation: stripe 10s linear infinite;
         }
 
         &:hover{
             background: $blue;
             cursor: pointer;
+
+            $backgroundOpacity: 1;
+            background: repeating-linear-gradient(45deg, rgba($blue, $backgroundOpacity), rgba($blue, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 20px);
+       
+            background-size: 200% 200%;
+            animation: stripe 10s linear infinite;
         }
     }
 
    
 }
+
+@keyframes stripe {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+    
 
 @media(max-width: 600px) {
     nav{
@@ -98,7 +123,20 @@ nav{
 
         .link{
             font-size: 14px;
+            padding-inline: 5px;
         }
 
     }
+}
+
+@media(max-width: 450px) {
+   nav{
+    .link{
+        font-size: 13px;
+        padding-inline: 5px;
+    }
+    // .spacer{
+    //     display: none;
+    // }
+   }
 }

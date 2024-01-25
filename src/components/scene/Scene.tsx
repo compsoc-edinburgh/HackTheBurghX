@@ -18,6 +18,8 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
 
     let typingSpeed = 50 ;
 
+    var sceneOpacity = 1;
+
     const [sceneWidth, setSceneWidth] = useState(window.innerWidth);
     const [sceneHeight, setSceneHeight] = useState(window.innerHeight);
 
@@ -230,15 +232,10 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
                     }
                     else {
 
-                        // dim the light
-                        if (pointLight.intensity > 0.1) {
-                            pointLight.intensity -= 0.5;
-                        }
+                        document.querySelector('.scene-background')?.classList.add('active');
 
-                        // set he canvas background to black
-                        
-                        renderer.setClearColor(0x000000, 0);
-                        
+                        canvasRef.current.style.opacity = ( sceneOpacity -= 0.001).toString();
+      
                 
                         if (cameraZ > 0.15) {
                             camera.position.setZ(cameraZ-=0.005);
@@ -246,6 +243,7 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
                         else {
                             // remove event listeners
                             window.removeEventListener('keypress', handlezoom);
+                             
                             setInScene(false);
                         }
     
