@@ -144,7 +144,7 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
         isTyping = true;
 
         // Remove the logo text from the screen the same style as it was added
-        if (sceneLogoElement && cutofIndex > 0){
+        if (sceneLogoElement && cutofIndex > -1){
 
             sceneLogoElement.innerHTML = sceneLogoElement.innerHTML.slice(0, -1);
             cutofIndex--;
