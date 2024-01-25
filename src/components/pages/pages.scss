@@ -1,5 +1,6 @@
 @import '../../colours';
 
+
 .page{
     $page-margin: 20px;
     $page-padding: 20px;
@@ -39,3 +40,14 @@
     }
 
 }
+
+@media (max-width: 600px) {
+    .page{
+        $page-margin: 5px;
+        $page-padding: 10px;
+        $nav-height: 100px;
+    }
+    
+}
+
+

@@ -71,8 +71,8 @@ canvas {
     background: repeating-linear-gradient(45deg, #A6D0DD, #A6D0DD 100px, #FFD3B0 100px, #FFD3B0 200px, #FFF9DE 200px, #FFF9DE 300px);
     background-size: 200% 200%;
     animation: stripe 20s linear infinite;
-    width: 100vw;
-    height: 100vh;
+    width: calc(100 * var(--vw));
+    height: calc(100 * var(--vh));
     position: absolute;
     z-index: 0;
 }

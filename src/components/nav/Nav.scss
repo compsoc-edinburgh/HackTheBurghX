@@ -25,18 +25,19 @@ nav{
         justify-content: flex-end;
 
         // --- Uncomment this to have the x in a tab also
-        // justify-content: center;
-        // border-inline: 2px solid $brown;
-        // border-top: 2px solid $brown;
-        // background: $white2;
-        // border-top-right-radius: 5px;
-        // border-top-left-radius: 5px;
-        // height: 90%;
-        // padding-inline: 10px;
+        justify-content: center;
+        border-inline: 2px solid $brown;
+        border-top: 2px solid $brown;
+        background: $white2;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        height: 90%;
+        padding-inline: 10px;
 
-        // &:hover{
-        //     background: $blue;
-        // }
+        &:hover{
+            background: $blue;
+            cursor: pointer;
+        }
 
         svg{
             width: 25px;
@@ -48,13 +49,13 @@ nav{
             }
 
             // If above code is back in comment this out
-            &:hover{
-                cursor: pointer;
+            // &:hover{
+            //     cursor: pointer;
 
-                path{
-                    fill: $blue;
-                }
-            }
+            //     path{
+            //         fill: $blue;
+            //     }
+            // }
         }
 
     }
@@ -88,4 +89,16 @@ nav{
     }
 
    
+}
+
+@media(max-width: 600px) {
+    nav{
+        gap: 5px;
+        padding-inline: 5px;
+
+        .link{
+            font-size: 14px;
+        }
+
+    }
 }

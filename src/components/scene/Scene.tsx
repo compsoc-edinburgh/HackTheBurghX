@@ -88,7 +88,7 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
 
                 typing();
 
-            }, 500);
+            }, 1500);
             
            
         }
@@ -191,6 +191,7 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
             };
 
             window.addEventListener('keypress', handlezoom);
+            window.addEventListener('click', handlezoom);
             canvasRef.current.addEventListener('click', handlezoom);
             
              // Load the computer .glb file into the scene
@@ -228,7 +229,17 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
 
                     }
                     else {
-    
+
+                        // dim the light
+                        if (pointLight.intensity > 0.1) {
+                            pointLight.intensity -= 0.5;
+                        }
+
+                        // set he canvas background to black
+                        
+                        renderer.setClearColor(0x000000, 0);
+                        
+                
                         if (cameraZ > 0.15) {
                             camera.position.setZ(cameraZ-=0.005);
                         }
@@ -296,8 +307,8 @@ const getScales = (sceneWidth: number, sceneHeight: number) => {
         scaleY = 0.7;
     }
     else {
-        scaleX = 0.8;
-        scaleY = 0.6;
+        scaleX = 0.9;
+        scaleY = 0.7;
     }
 
 
