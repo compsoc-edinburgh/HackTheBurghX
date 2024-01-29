@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import './Home.scss';
 import { Game } from '../../game/components';
 
 const Home: React.FC = () => {
 
     const [shouldRestart, setShouldRestart] = useState(false);
-    
+    useEffect(() => {
+		if (shouldRestart) {
+			setShouldRestart(false);
+		}
+	}, [shouldRestart]);
+
     return (
         <div className='page w-full flex flex-col items-center'>
             <p>Hack the Burgh X</p>
@@ -15,7 +20,7 @@ const Home: React.FC = () => {
                 <a target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSdWyk7F_E9m90cxkAr1AhJ9-xx_D5_u86ioZg8q3mawX3ydRw/viewform">Volunteer</a>
             </div>
 
-            <Game restartGame={() => setShouldRestart(true)} />
+            {!shouldRestart && <Game restartGame={() => setShouldRestart(true)} />}
         </div>
     );
 };
