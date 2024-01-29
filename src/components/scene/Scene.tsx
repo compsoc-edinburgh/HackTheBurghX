@@ -100,6 +100,12 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
 
     }
 
+    const handlezoom = () => {
+        if (!isTyping){
+            zoom = true;
+        }
+    };
+
     const typing = () => {
 
         isTyping = true;
@@ -130,6 +136,10 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
             isText = true;  
             sceneBeginTextElement?.classList.add('active');
 
+
+            window.addEventListener('keypress', handlezoom);
+            window.addEventListener('click', handlezoom);
+            canvasRef.current.addEventListener('click', handlezoom);
 
         }
     }
@@ -186,15 +196,8 @@ const Scene: React.FC<SceneProps> = ({ setInScene }) => {
     
             renderer.setClearColor(0x000000, 0);
 
-            const handlezoom = () => {
-                if (!isTyping){
-                    zoom = true;
-                }
-            };
 
-            window.addEventListener('keypress', handlezoom);
-            window.addEventListener('click', handlezoom);
-            canvasRef.current.addEventListener('click', handlezoom);
+           
             
              // Load the computer .glb file into the scene
             const loader = new GLTFLoader();
