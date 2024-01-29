@@ -76,7 +76,7 @@ export const Game: FC<GameProps> = ({ restartGame }) => {
 		document.removeEventListener('keydown', handleKeyDown);
 		restartGame();
 	};
-
+	
 	useEffect(() => {
 		const gameSpeed = getGameSpeedFromSessionStorage();
 		if (gameSpeed > GAME_SPEED.DEFAULT) {
@@ -101,6 +101,7 @@ export const Game: FC<GameProps> = ({ restartGame }) => {
 	}, [score]);
 
 	useEffect(() => {
+		
 		let intervalID: number;
 
 		if (gameSpeed > GAME_SPEED.DEFAULT && !gameOver) {
@@ -115,8 +116,9 @@ export const Game: FC<GameProps> = ({ restartGame }) => {
 		};
 	}, [gameSpeed, gameOver, score]);
 
+
 	return (
-		<Stage width={VIEW_PORT_WIDTH} height={400} options={{ antialias: true, background: '#ffffff' }}>
+		<Stage width={VIEW_PORT_WIDTH} height={400} options={{ antialias: true, background: '#f5ecdb' }}>
 			<Container sortableChildren={true}>
 				<AppContext.Provider
 					value={{
