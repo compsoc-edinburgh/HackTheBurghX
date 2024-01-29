@@ -10,7 +10,7 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://github.com/HTB-X/website-frontend/blob/228d4f89a84334b0d706137588dc39b033a2e186/src/assets/past-project-imgs/pixeleconomy.png"
+                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/pixeleconomy.png"
                 alt="Pixel Economy"
                 className="project-img"
               />
@@ -35,7 +35,7 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://github.com/HTB-X/website-frontend/blob/228d4f89a84334b0d706137588dc39b033a2e186/src/assets/past-project-imgs/edna.png"
+                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/edna.png"
                 alt="Edna"
                 className="project-img"
               />
@@ -60,7 +60,7 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://github.com/HTB-X/website-frontend/blob/228d4f89a84334b0d706137588dc39b033a2e186/src/assets/past-project-imgs/bread.png"
+                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/bread.png"
                 alt="Is it bread?"
                 className="project-img"
               />
@@ -83,7 +83,7 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://github.com/HTB-X/website-frontend/blob/228d4f89a84334b0d706137588dc39b033a2e186/src/assets/past-project-imgs/minepi.png"
+                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/minepi.png"
                 alt="MinePi"
                 className="project-img"
               />
