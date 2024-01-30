@@ -10,7 +10,7 @@ type Link = {
 type NavProps = {
   page: any;
   setPage: any;
-setInScene: any;
+  setInScene: any;
 };
 
 const Nav = ({ page, setPage, setInScene }: NavProps) => {

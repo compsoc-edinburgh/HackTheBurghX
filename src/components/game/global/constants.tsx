@@ -1,5 +1,11 @@
-export const VIEW_PORT_WIDTH = window.innerWidth || document.documentElement.clientWidth;
-export const HALF_VIEW_PORT_WIDTH = VIEW_PORT_WIDTH / 2;
+const calculateViewportWidth = () => {
+    return window.innerWidth || document.documentElement.clientWidth;
+};
+
+export const VIEW_PORT_WIDTH = calculateViewportWidth();
+export const HALF_VIEW_PORT_WIDTH = (1 / 2) * VIEW_PORT_WIDTH;
+export const THIRD_LEFT_PORT_WIDTH = (1 / 3) * VIEW_PORT_WIDTH;
+export const THIRD_RIGHT_PORT_WIDTH = (2 / 3) * VIEW_PORT_WIDTH;
 export const CLOUD_WIDTH = 95;
 export const BIRD_WIDTH = 92;
 export const TOTAL_CLOUDS = 1;

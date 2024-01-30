@@ -1,1 +1,121 @@
 @import '../../../colours';
+$angle: 8px;
+$angle-o: 4px;
+
+.main-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  background: $blue;
+}
+
+
+.button {
+  top: 0;
+  left: 0;
+  transition: all .15s linear 0s;
+  position: relative;
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: rgb(255, 255, 255);
+  
+  text-transform: uppercase;
+  color: black;
+  font-family: $secondary-font;
+  letter-spacing: 1px;
+  
+  box-shadow: -6px 6px 0 black;
+  text-decoration: none;
+  
+  &:hover {
+    top: 3px;
+    left: -3px;
+    box-shadow: -3px 3px 0 black;
+    
+    &::after {
+      top: 1px;
+      left: -2px;
+      width: $angle-o;
+      height: $angle-o;
+    }
+    
+    &::before {
+      bottom: -2px;
+      right: 1px;
+      width: $angle-o;
+      height: $angle-o;
+    }
+  }
+  
+  &::after {
+    transition: all .15s linear 0s;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -4px;
+    width: $angle;
+    height: $angle;
+    background-color: black;
+    transform: rotate(45deg);
+    z-index: -1;
+    
+  }
+  
+  &::before {
+    transition: all .15s linear 0s;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 2px;
+    width: $angle;
+    height: $angle;
+    background-color: black;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+}
+
+a.btn { position: relative; }
+
+a:active.btn {
+  top: 6px;
+  left: -6px;
+  box-shadow: none;
+  
+  &:before {
+    bottom: 1px;
+    right: 1px;
+  }
+  
+  &:after {
+    top: 1px;
+    left: 1px;
+  }
+}
+
+.inner-box {
+    position: relative;
+    border: 2px solid $brown;
+    padding: 20px;
+    width: 1000px;
+    height: 200px;
+    font-family: $secondary-font;
+    font-size: 36px;
+    text-align: center;
+    background-color: $white;
+}
+
+.countdown {
+    font-size: 48px;
+    
+}
+
+
+.bottom-section {
+    font-family: $secondary-font;
+    text-align: center;
+}
+
+/* Add additional styling for fun visual elements within the main box */

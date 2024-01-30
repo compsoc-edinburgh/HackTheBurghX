@@ -13,6 +13,7 @@ import {
 } from '../../global/utils';
 import { GAME_SPEED } from '../../global/enums';
 import { useStore } from '../../hooks';
+import '../../../../assets/htbxlogo.png'
 
 interface GameProps {
 	restartGame: () => void;
@@ -148,13 +149,22 @@ export const Game: FC<GameProps> = ({ restartGame }) => {
 				</AppContext.Provider>
 			</Container>
 			<Container>
-				<Text text={`Score: ${score}`} x={HALF_VIEW_PORT_WIDTH / 4} y={370} />
-				<Text text={`Highest Score: ${highScore}`} x={HALF_VIEW_PORT_WIDTH} y={370} />
+				<Text text={`Score: ${score}`} x={HALF_VIEW_PORT_WIDTH * .5} y={15} style={{
+					fill: 0x5f3c27,
+					fontFamily: 'AR One Sans',
+					fontSize: 22
+				}}/>
+				<Text text={`High Score: ${highScore}`} x={HALF_VIEW_PORT_WIDTH * 1.33} y={15} style={{
+					fill: 0x5f3c27,
+					fontFamily: 'AR One Sans',
+					fontSize: 22,
+				}}/>
 			</Container>
 			<Container visible={gameOver}>
 				<GameOver />
 				<BtnRestart restartGame={handleResetBtn} />
 			</Container>
+
 		</Stage>
 	);
 };
