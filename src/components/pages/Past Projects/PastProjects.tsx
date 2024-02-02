@@ -10,6 +10,52 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
+                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/vibe-check.png"
+                alt="Vibe Check"
+                className="project-img"
+              />
+            </div>
+            <div className="project-text">
+              <h2 className="project-title">
+                <a href="https://devpost.com/software/vibe-check-tox0wn">
+                  Vibe Check
+                </a>
+              </h2>
+              <p>
+                Vibe Check is a web app to help students give real-time feedback to professors during lectures.
+                <br />
+                Winner in 2022.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="project">
+            <div className="project-img">
+              <img
+                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/pengu.png"
+                alt="Penguu"
+                className="project-img"
+              />
+            </div>
+            <div className="project-text">
+              <h2 className="project-title">
+                <a href="https://devpost.com/software/penguu">
+                  Penguu
+                </a>
+              </h2>
+              <p>
+                Penguu helps people with chronic illnesses to be able to live independently and safely at home, while maintaining a high level of privacy.
+                <br />
+                Winner in 2022.
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div className="project">
+            <div className="project-img">
+              <img
                 src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/pixeleconomy.png"
                 alt="Pixel Economy"
                 className="project-img"
@@ -27,31 +73,6 @@ const PastProjects: React.FC = () => {
                 fundamentals of trading fun and accessible.
                 <br />
                 Best of Show in 2020.
-              </p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div className="project">
-            <div className="project-img">
-              <img
-                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/edna.png"
-                alt="Edna"
-                className="project-img"
-              />
-            </div>
-            <div className="project-text">
-              <h2 className="project-title">
-                <a href="https://devpost.com/software/edna-a-writing-chat-bot">
-                  Edna
-                </a>
-              </h2>
-              <p>
-                Writing is hard! Having no one to talk to about it makes it
-                harder. Worry no more, Edna is here to listen to your writing
-                woes.
-                <br />
-                Runner-Up in 2020.
               </p>
             </div>
           </div>
@@ -78,28 +99,7 @@ const PastProjects: React.FC = () => {
               </p>
             </div>
           </div>
-        </li>
-        <li>
-          <div className="project">
-            <div className="project-img">
-              <img
-                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/minepi.png"
-                alt="MinePi"
-                className="project-img"
-              />
-            </div>
-            <div className="project-text">
-              <h2 className="project-title">
-                <a href="https://devpost.com/software/minepi.png">MinePi</a>
-              </h2>
-              <p>
-                A mod to let you control your Raspberry pi from Minecraft.
-                <br />
-                Runner-Up for best hardware hack in 2020.
-              </p>
-            </div>
-          </div>
-        </li>
+        </li> 
       </ul>
     </div>
   );
