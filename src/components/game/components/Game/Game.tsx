@@ -149,11 +149,13 @@ export const Game: FC<GameProps> = ({ restartGame }) => {
 				</AppContext.Provider>
 			</Container>
 			<Container>
+				{/* @ts-ignore */}
 				<Text text={`Score: ${score}`} x={HALF_VIEW_PORT_WIDTH * .5} y={15} style={{
 					fill: 0x5f3c27,
 					fontFamily: 'AR One Sans',
 					fontSize: 22
 				}}/>
+				{/* @ts-ignore */}
 				<Text text={`High Score: ${highScore}`} x={HALF_VIEW_PORT_WIDTH * 1.33} y={15} style={{
 					fill: 0x5f3c27,
 					fontFamily: 'AR One Sans',

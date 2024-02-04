@@ -46,7 +46,7 @@ const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
 const Home: React.FC = () => {
 
     const [shouldRestart, setShouldRestart] = useState(false);
-    const targetDate = '2024-02-01T00:00:00'; // Set your target date
+    const targetDate = '2024-02-19T00:00:00'; // Set your target date
 
     useEffect(() => {
 		if (shouldRestart) {
@@ -60,9 +60,9 @@ const Home: React.FC = () => {
                 <div className='inner-box'>
                     <h1>Registration Closes February 2 12:00pm</h1>
                     <CountdownTimer targetDate={targetDate} />
-                    <div className='button'>
+                    <a href='https://register.2024.hacktheburgh.com/' target='_blank' className='button'>
                         <h3>Register Now</h3>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div className ='logo'>
