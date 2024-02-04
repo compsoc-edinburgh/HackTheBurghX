@@ -8,6 +8,6 @@ export default defineConfig({
   build: {
     outDir: 'docs', // Specify the custom output directory here
   },
-  base: '/website-frontend/', // Add this line
+  base: '/HackTheBurghX/', // Add this line
 
 })
