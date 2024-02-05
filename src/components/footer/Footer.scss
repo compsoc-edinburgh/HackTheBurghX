@@ -3,14 +3,148 @@
 @import '../../colours';
 
 footer{
-
-    height: 0px;
+    height: 200px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 80px;
     color: white;
+    font-family: $footer-font;
+    // overflow: hidden;
+    // border-inline: 2px solid $brown;
+    position: relative;
+
+
+
+}
+
+.scrollContainer{
+    left: 0;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: $footer-font;
+    animation: roll 20s linear infinite;
+    // gap: 10px;
     
+    &.second{
+
+    //    margin-left: 10px;
+       position: absolute;
+       top: 0;
+       transform: translateX(100%);
+       z-index: 1000;
+    //    left: 100%;
+       animation: roll2 20s linear infinite;
+    }
+}
+
+
+.icon-container {
+
+    .heading{
+        transform: rotate(-90deg);
+        font-size: 26px;
+        font-family: $main-font;
+    }
+
+    display: flex;
+    height: 200px;
+
+    align-items: center;
+
+    img{
+        max-height: 110px;
+        // opacity: 0.6;
+    }
+    a{
+        border: 0;
+    }
+    a:hover{
+        border: 0;
+        &::after{
+            content:unset;
+        }
+    }
+    overflow: visible;
+
+
+    &.platinum{
+        img{
+            max-width: 300px;
+        }
+        .heading{
+            color: #49a2e6;
+        }
+        border-top: 2px dashed #49a2e6;
+        border-bottom: 2px dashed #49a2e6;
+    }
+
+    &.gold{
+        img{
+            max-width: 230px;
+            max-height: 100px;
+        }
+        .heading{
+            color: #a28834;
+        }
+        border-top: 2px dashed #a28834;
+        border-bottom: 2px dashed #a28834;
+    }
+
+    &.silver{
+        img{
+            max-width: 150px;
+        }
+        .heading{
+            color: grey;
+        }
+        border-top: 2px dashed grey;
+        border-bottom: 2px dashed grey;
+    }
+
+    &.partners{
+        img{
+            max-width: 150px;
+        }
+
+        .heading{
+            color: $brown;
+        }
+        border-top: 2px dashed $brown;
+        border-bottom: 2px dashed $brown;
+    
+    }
+}
+
+.icon-container i {
+margin: 0 10px;
+font-size: 24px;
+}
+
+@keyframes roll {
+0% { transform: translateX(0%); }
+100% { transform: translateX(-100%); }
+}
+
+@keyframes roll2 {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+@media (max-width: 1000px) {
+    footer{
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 600px){
+    .scrollContainer{
+        &.second{
+            display: none;
+        }
+    }
+
+    @keyframes roll {
+        0% { transform: translateX(100vw); }
+        100% { transform: translateX(-100%); }
+    }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './FAQ.scss';
+import Footer from '../../footer/Footer';
 
 const FAQ: React.FC = () => {
 
@@ -58,6 +59,8 @@ const FAQ: React.FC = () => {
                     })
                 }
             </div>
+
+            <Footer></Footer>
 
         </div>
     );

@@ -183,7 +183,7 @@ const Home: React.FC = () => {
                 <img src='../../../../public/Logo1.png' alt="Test" />
             </div> */}
 
-            {/* <Footer /> */}
+            <Footer />
             </div>
         </div>
     );

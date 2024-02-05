@@ -4,6 +4,7 @@ import vibeCheck from "/past-project-imgs/vibe-check.png";
 import penguu from "/past-project-imgs/pengu.png";
 import pixelEconomy from "/past-project-imgs/pixeleconomy.png";
 import isItBread from "/past-project-imgs/bread.png";
+import Footer from "../../footer/Footer";
 
 const PastProjects: React.FC = () => {
   return (
@@ -20,7 +21,7 @@ const PastProjects: React.FC = () => {
               />
             </div>
             <a target="_blank" href="https://devpost.com/software/vibe-check-tox0wn">
-                  Vibe Check
+                  Vibe Check 
             </a>
             <div className="project-text">
               <p>
@@ -98,6 +99,8 @@ const PastProjects: React.FC = () => {
           </div>
         </li> 
       </ul>
+
+      <Footer></Footer>
     </div>
   );
 };
