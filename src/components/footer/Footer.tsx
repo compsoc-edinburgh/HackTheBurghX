@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         {
             name: "Marshall Wace",
             img: "/sponsors/marshall-wace.svg",
-            link: "https://www.facebook.com/"
+            link: "https://www.mwam.com/"
         },
     ]
 
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
         // {
         //     name: "Optiver",
         //     img: "/sponsors/optiver.png",
-        //     link: "https://www.instagram.com/"
+        //     link: "https://optiver.com/"
         // },
         
     ]
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
         {
             name: "Addepar",
             img: "/sponsors/addepar.png",
-            link: "https://www.instagram.com/"
+            link: "https://addepar.com/"
         },
     ]
 
@@ -32,17 +32,17 @@ const Footer: React.FC = () => {
         {
             name: "Compsoc",
             img: "/sponsors/compsoc.png",
-            link: "https://www.youtube.com/"
+            link: "https://comp-soc.com/"
         },
         {
             name: "MLH",
             img: "/sponsors/mlh.png",
-            link: "https://www.linkedin.com/"
+            link: "https://mlh.io/"
         },
         {
             name: "Hackathons UK",
             img: "/sponsors/hackathonUK.png",
-            link: "https://www.linkedin.com/"
+            link: "https://www.hackathons.org.uk/"
         }
     ]
 
