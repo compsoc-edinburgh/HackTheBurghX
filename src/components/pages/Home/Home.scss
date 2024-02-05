@@ -3,13 +3,204 @@ $angle: 8px;
 $angle-o: 4px;
 
 .main-box {
+
+
+  text-align: center;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  position: relative;
-  background: $blue;
 }
+
+.part{
+  height: calc(100vh - 150px);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  p {
+    color: $brown;
+    font-size: clamp(14px, 1.5vw, 24px);
+  }
+
+  margin-bottom: 50px;
+  
+}
+
+
+.pageHeader{
+  font-family: $main-font;
+  font-size: 28px;
+  font-size: clamp(31px,6vw, 70px);
+  color: $brown;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+.description{
+  font-family: $secondary-font;
+  font-size: clamp(14px, 2vw, 26px);
+  color: $brown;
+  opacity: 0.7;
+
+  text-align: center;
+}
+
+.socialIcons{
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: clamp(0px, 17%, 60px);
+    // padding: none;
+    padding: 10px 10px;
+  }
+
+  img{
+    
+    width: 100%;
+
+  }
+}
+
+.inner-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 1;
+
+  background-image: url('/x.png');
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+    opacity: 0.3;
+    // filter: blur(5px) ;
+}
+
+.game{
+
+  // border-top: 2px solid $brown;
+  // border-bottom: 2px solid $brown;
+
+
+  border-top: 6px dashed rgba($brown,01);
+  border-bottom: 6px dashed rgba($brown,01);
+
+
+
+  padding-top: 30px;
+  margin-top: 10px;
+  // margin-bottom: 40px;
+
+  canvas{
+    // width: 90% !important;
+    // height: 100px !important;
+  }
+}
+
+
+
+.inner-box {
+
+    // margin-top: 80px;
+    margin-bottom: 40px;
+
+    // change backgound image opacity
+    
+    position: relative;
+    border: 2px solid $brown;
+    padding: 20px;
+    width: clamp(100px, calc(90vw - 60px), 1000px);
+    height: clamp( 180px, 25vw, 250px);
+    font-family: $secondary-font;
+    font-size: 36px;
+    // background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+
+    h1{
+      opacity: 0.8;
+      
+      font-size: 24px;
+      color: $brown;
+      margin-top: 10px;
+      font-size: clamp(14px, 2vw, 24px);
+      z-index: 3;
+    }
+
+    .countdown-timer{
+      color: $brown;
+      font-family: $main-font;
+      font-size: clamp(16px, 9vw, 90px);
+      
+      line-height: clamp(16px, 9vw, 90px);
+      margin-top: 10px;
+      z-index: 3;
+    }
+
+    .links{
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      left: 50%;
+      transform:translate(-50%, 50%);
+      bottom: 10px;
+      width: 90%;
+      max-width: 600px;
+      min-width: 150px;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      z-index: 4;
+    }
+
+    a{
+      
+      color: $brown;
+      font-size: 30px;
+      font-size: clamp(15px, 2vw, 25px);
+     
+      margin: 0px;
+    }
+}
+
+.countdown {
+    font-size: 48px;
+    
+}
+
+
+.bottom-section {
+    font-family: $secondary-font;
+    text-align: center;
+}
+
+/* Add additional styling for fun visual elements within the main box */
+
+
 
 
 .button {
@@ -94,28 +285,3 @@ a:active.btn {
     left: 1px;
   }
 }
-
-.inner-box {
-    position: relative;
-    border: 2px solid $brown;
-    padding: 20px;
-    width: 1000px;
-    height: 200px;
-    font-family: $secondary-font;
-    font-size: 36px;
-    text-align: center;
-    background-color: $white;
-}
-
-.countdown {
-    font-size: 48px;
-    
-}
-
-
-.bottom-section {
-    font-family: $secondary-font;
-    text-align: center;
-}
-
-/* Add additional styling for fun visual elements within the main box */

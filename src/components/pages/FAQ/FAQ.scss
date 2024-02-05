@@ -1,1 +1,41 @@
 @import '../../../colours';
+
+
+
+.questions{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    margin-top: 40px;
+
+    width: 100%;
+
+    color: $brown;
+
+    text-align: center;
+
+    .question{
+        max-width: 500px;
+  
+        font-family: $secondary-font;
+    }
+
+    .q{
+        $backgroundOpacity: .5;
+        background: repeating-linear-gradient(45deg, rgba($blue, $backgroundOpacity), rgba($blue, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 10px, rgba($white2, $backgroundOpacity) 20px);
+        font-size: clamp(18px, 5vw, 30px);
+        margin-bottom: 10px;
+    }
+
+    .a {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}

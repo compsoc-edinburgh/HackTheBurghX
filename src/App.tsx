@@ -15,7 +15,8 @@ import { Game } from './components/game/components'
 function App() {
 
   // State to determine if the user is in the opening scene or not
-  const [inScene, setInScene] = useState(true);
+  const [inScene, setInScene] = useState(window.innerWidth > 600 ? true : false);
+
 
   const [page, setPage] = useState('Home');
 
@@ -61,6 +62,7 @@ function App() {
 
             <> Error Page Not Found</>
           }
+
 
           </Background>
 

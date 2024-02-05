@@ -16,8 +16,8 @@ type NavProps = {
 const Nav = ({ page, setPage, setInScene }: NavProps) => {
   const links: Link[] = [
     { title: "Home", href: "/home" },
-    { title: "Past Projects", href: "/past-projects" },
     { title: "Information", href: "/information" },
+    { title: "Past Projects", href: "/past-projects" },
   ];
 
   return (

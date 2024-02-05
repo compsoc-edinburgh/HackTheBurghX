@@ -13,7 +13,7 @@ export const GameOver: FC<GameOverProps> = ({}) => {
 	const croppedTexture = new Texture(baseTexture, cropRect);
 
 	return (
-		<Container position={[HALF_VIEW_PORT_WIDTH - width / 2, 0]}>
+		<Container position={[HALF_VIEW_PORT_WIDTH - width / 2, 150]}>
 			<Sprite texture={croppedTexture} />
 		</Container>
 	);

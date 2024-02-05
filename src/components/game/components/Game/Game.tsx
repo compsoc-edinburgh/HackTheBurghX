@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, FC } from 'react';
 import { Stage, Container, Text } from '@pixi/react';
 import { Ground, Clouds, Wrapper, Dino, Trees, GameOver, BtnRestart, Birds } from '../../components';
-import { VIEW_PORT_WIDTH, HALF_VIEW_PORT_WIDTH } from '../../global/constants';
+import { VIEW_PORT_WIDTH, VIEW_PORT_HEIGHT, HALF_VIEW_PORT_WIDTH } from '../../global/constants';
 import { ComponentBuilderProps, PixiObject } from '../../global/interfaces';
 import { AppContext } from '../../global/context';
 import {
@@ -13,10 +13,11 @@ import {
 } from '../../global/utils';
 import { GAME_SPEED } from '../../global/enums';
 import { useStore } from '../../hooks';
-import '../../../../assets/htbxlogo.png'
+import '/htbxlogo.png'
 
 interface GameProps {
 	restartGame: () => void;
+
 }
 
 export const Game: FC<GameProps> = ({ restartGame }) => {
@@ -119,7 +120,7 @@ export const Game: FC<GameProps> = ({ restartGame }) => {
 
 
 	return (
-		<Stage width={VIEW_PORT_WIDTH} height={400} options={{ antialias: true, background: '#f5ecdb' }}>
+		<Stage width={VIEW_PORT_WIDTH} height={VIEW_PORT_HEIGHT} options={{ antialias: true, background: '#f5ecdb' }}>
 			<Container sortableChildren={true}>
 				<AppContext.Provider
 					value={{

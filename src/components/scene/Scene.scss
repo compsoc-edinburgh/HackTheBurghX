@@ -21,8 +21,9 @@ canvas {
 }
 
 .scene-logo-text {
-    text-shadow: 2px 2px 2px $black;
+    text-shadow: 2px 2px 2px $brown;
     font-family: 'Silkscreen', sans-serif;
+    color: $brown;
 }
 
 .scene-begin-text {
@@ -30,6 +31,7 @@ canvas {
     opacity: 0.6;
     margin-top: 15px;
     font-family: 'Silkscreen', sans-serif;
+    color: $brown; 
 }
 
 .scene-begin-text.active{

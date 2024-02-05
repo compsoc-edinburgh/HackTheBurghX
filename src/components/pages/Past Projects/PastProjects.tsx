@@ -1,26 +1,28 @@
 import React from "react";
 import "./PastProjects.scss";
+import vibeCheck from "/past-project-imgs/vibe-check.png";
+import penguu from "/past-project-imgs/pengu.png";
+import pixelEconomy from "/past-project-imgs/pixeleconomy.png";
+import isItBread from "/past-project-imgs/bread.png";
 
 const PastProjects: React.FC = () => {
   return (
     <div className="page">
-      <h1 className="title">Here are some of our previous standouts:</h1>
+      <h1 className="title">Previous Projects</h1>
       <ul className="past-projects">
         <li>
           <div className="project">
             <div className="project-img">
               <img
-                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/vibe-check.png"
+                src={vibeCheck}
                 alt="Vibe Check"
                 className="project-img"
               />
             </div>
-            <div className="project-text">
-              <h2 className="project-title">
-                <a href="https://devpost.com/software/vibe-check-tox0wn">
+            <a target="_blank" href="https://devpost.com/software/vibe-check-tox0wn">
                   Vibe Check
-                </a>
-              </h2>
+            </a>
+            <div className="project-text">
               <p>
                 Vibe Check is a web app to help students give real-time feedback to professors during lectures.
                 <br />
@@ -33,17 +35,16 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/pengu.png"
+                src={penguu}
                 alt="Penguu"
                 className="project-img"
               />
             </div>
+            <a target="_blank" href="https://devpost.com/software/penguu">
+              Penguu
+            </a>
             <div className="project-text">
-              <h2 className="project-title">
-                <a href="https://devpost.com/software/penguu">
-                  Penguu
-                </a>
-              </h2>
+             
               <p>
                 Penguu helps people with chronic illnesses to be able to live independently and safely at home, while maintaining a high level of privacy.
                 <br />
@@ -56,17 +57,15 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/pixeleconomy.png"
+                src={pixelEconomy}
                 alt="Pixel Economy"
                 className="project-img"
               />
             </div>
-            <div className="project-text">
-              <h2 className="project-title">
-                <a href="https://devpost.com/software/pixeleconomy">
+            <a target="_blank" href="https://devpost.com/software/pixeleconomy">
                   Pixel Economy
-                </a>
-              </h2>
+            </a>
+            <div className="project-text">
               <p>
                 PixelEconomy is an online, virtual marketplace for creating,
                 selling and buying pixel art that makes learning the
@@ -81,17 +80,15 @@ const PastProjects: React.FC = () => {
           <div className="project">
             <div className="project-img">
               <img
-                src="https://raw.githubusercontent.com/HTB-X/website-frontend/main/src/assets/past-project-imgs/bread.png"
+                src={isItBread}
                 alt="Is it bread?"
                 className="project-img"
               />
             </div>
-            <div className="project-text">
-              <h2 className="project-title">
-                <a href="https://devpost.com/software/is-it-bread">
+            <a target="_blank" href="https://devpost.com/software/is-it-bread">
                   Is it bread?
                 </a>
-              </h2>
+            <div className="project-text">
               <p>
                 Have you ever looked at an item and thought, "Is that bread?".
                 Can you really trust yourself to make that judgement? Fear not,

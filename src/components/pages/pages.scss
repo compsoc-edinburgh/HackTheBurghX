@@ -50,4 +50,31 @@
     
 }
 
+// when on mobile dont show scroll bar
+@media (max-width: 600px) {
+    .page{
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    
+        &::-webkit-scrollbar:hover {
+            width: 5px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background: $white;
+        }
+    
+    
+    
+        &::-webkit-scrollbar-thumb {
+            background: $brown;
+            border-radius: 5px;
+        }
+    
+        &::-webkit-scrollbar-thumb:hover {
+            background: $brown;
+        }
+    }
+}
 
