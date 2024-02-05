@@ -3,6 +3,11 @@ import './Home.scss';
 import { Game } from '../../game/components';
 import Footer from '../../footer/Footer';
 
+import insta from '/insta.png';
+import facebook from '/facebook.png';
+import yt from '/yt.png';
+import inIcon from '/in.png';
+
 const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
     const calculateTimeRemaining = () => {
         const now = new Date().getTime();
@@ -143,16 +148,16 @@ const Home: React.FC = () => {
                 <div className="socialIcons">
                   
                     <a href="https://www.instagram.com/hacktheburgh/" target="_blank">
-                        <img src='/insta.png' alt="Instagram" />
+                        <img src={insta} alt="Instagram" />
                     </a>
                     <a href="https://www.facebook.com/hacktheburgh/" target="_blank">
-                        <img src='/facebook.png' alt="Facebook" />
+                        <img src={facebook} alt="Facebook" />
                     </a>
                     <a href="https://www.youtube.com/channel/UCQKvr90vGzbgteMeM1A9nxQ" target="_blank">
-                        <img src='/yt.png' alt="YouTube" />
+                        <img src={yt} alt="YouTube" />
                     </a>
                     <a href="https://www.linkedin.com/company/hack-the-burgh/" target="_blank">
-                        <img src='/in.png' alt="LinkedIn" />
+                        <img src={inIcon} alt="LinkedIn" />
                     </a>
                 </div>
 
