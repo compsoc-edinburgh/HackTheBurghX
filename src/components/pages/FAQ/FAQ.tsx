@@ -23,10 +23,6 @@ const FAQ: React.FC = () => {
             answer: "You can team up with up to five other people! Don't worry if you haven't got a team — you're not alone. We'll help you form a team at the event."
         },
         {
-            question: "What if I'm not a student?",
-            answer: "We'd love to have you as a mentor! Please get in touch for more information."
-        },
-        {
             question: "What do I bring?",
             answer: "Yourself, and something to hack on. We'll be providing snacks and drinks throughout the weekend, but you need to bring your own device (and charger).",
         },

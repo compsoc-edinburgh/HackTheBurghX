@@ -56,6 +56,15 @@ canvas {
     }
 }
 
+@media(max-width: 400px) {
+    .scene-logo {
+        font-size: 25px;
+    }
+    .scene-begin-text {
+        font-size: 12px;
+    }
+}
+
 @keyframes pulse {
     0% {
         opacity: 0.5;
