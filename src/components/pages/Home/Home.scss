@@ -13,7 +13,7 @@ $angle-o: 4px;
 }
 
 .part{
-  height: calc(100vh - 150px);
+  min-height: calc(100vh - 150px);
   width: 100%;
 
   display: flex;
@@ -24,6 +24,7 @@ $angle-o: 4px;
   p {
     color: $brown;
     font-size: clamp(14px, 1.5vw, 24px);
+    margin: 10px;
   }
 
   margin-bottom: 50px;
