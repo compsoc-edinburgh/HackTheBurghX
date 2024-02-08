@@ -12,12 +12,11 @@ const Footer: React.FC = () => {
     ]
 
     const goldSponsors = [
-        // {
-        //     name: "Optiver",
-        //     img: "/sponsors/optiver.png",
-        //     link: "https://optiver.com/"
-        // },
-        
+        {
+            name: "Optiver",
+            img: "/sponsors/optiver.png",
+            link: "https://optiver.com/"
+        },
     ]
 
     const silverSponsors = [
