@@ -97,10 +97,8 @@ const Home: React.FC = () => {
 		}
 	}, [shouldRestart]);
 
-    
     return (
         <div className='page w-full flex flex-col items-center'>
-            
             <div className='main-box'>
             <a id="mlh-trust-badge" href="https://mlh.io/eu?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=white" target="_blank">
                 <img id="mlh-trust-img" src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-white.svg" alt="Major League Hacking 2024 Hackathon Season">

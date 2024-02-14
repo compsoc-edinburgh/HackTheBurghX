@@ -17,7 +17,6 @@ const Footer: React.FC = () => {
             img: "/sponsors/optiver.png",
             link: "https://optiver.com/"
         },
-        
     ]
 
     const silverSponsors = [

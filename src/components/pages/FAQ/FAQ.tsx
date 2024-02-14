@@ -20,7 +20,7 @@ const FAQ: React.FC = () => {
         },
         {
             question: 'What about teams?',
-            answer: "You can team up with up to five other people! Don't worry if you haven't got a team — you're not alone. We'll help you form a team at the event."
+            answer: "You can team up with up to four other people! Don't worry if you haven't got a team — you're not alone. We'll help you form a team at the event."
         },
         {
             question: "What do I bring?",
