@@ -32,6 +32,57 @@ const FAQ: React.FC = () => {
         },
     ]
 
+    const schedule = [
+        {
+            day: "Saturday, 2nd March",
+            events: [
+                "09:30 - Registration",
+                "11:00 - Opening Ceremony",
+                "12:00 - Hackathon Official Start",
+                "12:30 - Sponsor Workshop ( Session 1 )",
+                "14:00 - Lunch",
+                "15:30 - Sponsor Workshop ( Session 2 )",
+                "17:30 - Sponsor Workshop ( Session 3 )",
+                "19:30 - Dinner",
+            ],
+            venues: [
+                "Ground Floor Reception",
+                "Oak Lecture Theatre",
+                "All Venues",
+                "Hawthorn, Rowan",
+                "Ground Floor Reception / Cafe Area",
+                "Hawthorn, Rowan",
+                "Hawthorn, Rowan",
+                "Ground Floor Reception / Cafe Area"
+            ]
+        },
+        {
+            day: "Sunday, 3rd March",
+            events: [
+                "00:00 - Midnight Pizza",
+                "01:00 - Minigame (organised by HTB)",
+                "08:00 - Breakfast",
+                "12:00 - Submission Deadline",
+                "12:30 - Lunch",
+                "13:00 - Project Demonstrations", 
+                "14:30 - Judges' Deliberation",
+                "15:30 - Awards Ceremony",
+                "17:00 - Event Close"
+            ],
+            venues: [
+                "Ground Floor Reception/ Cafe Area",
+                "Rowan",
+                "Ground Floor Reception/ Cafe Area",
+                "All Venues",
+                "Ground Floor Reception/ Cafe Area",
+                "Larch, Hawthorn",
+                "Hawthorn or Rowan (TBC)", 
+                "Oak Lecture Theatre", 
+                "All Venues"
+            ]
+        }
+    ]
+
     return (
         <div className='page'>
          
@@ -54,6 +105,47 @@ const FAQ: React.FC = () => {
                         )
                     })
                 }
+            </div>
+
+            <div className="title">
+                Schedule
+            </div>
+
+            <div className="schedule">
+            {
+                schedule.map((day, i) => {
+                    return (
+                        <>
+                            <div className="day" key={i}>
+                                {day.day}
+                            </div>
+                            <div className="events">
+                                {
+                                    day.events.map((event, j) => {
+                                        return (
+                                            <div className="event" key={j}>
+                                                <div className="left">
+                                                    <div className="time">
+                                                        {event.split(' - ')[0]}
+                                                    </div>
+                                                    <div className="venue">
+                                                        {day.venues[j]}
+                                                    </div>
+
+                                                </div>
+                                                <div className="seperator"></div>
+                                                <div className="name">
+                                                    {event.split(' - ')[1]}
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </>
+                    )
+                })
+            }
             </div>
 
             <Footer></Footer>

@@ -52,7 +52,7 @@ const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
 const Home: React.FC = () => {
 
     const [shouldRestart, setShouldRestart] = useState(false);
-    const targetDate = '2024-02-19T00:00:00'; // Set your target date
+    const targetDate = '2024-02-19T12:00:00'; // Set your target date
 
     const [scroll, setScroll] = useState(false);
 
@@ -100,10 +100,10 @@ const Home: React.FC = () => {
     return (
         <div className='page w-full flex flex-col items-center'>
             <div className='main-box'>
-            <a id="mlh-trust-badge" href="https://mlh.io/eu?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=white" target="_blank">
+            <a className='no-hover' id="mlh-trust-badge" href="https://mlh.io/eu?utm_source=eu-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=white" target="_blank">
                 <img id="mlh-trust-img" src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-white.svg" alt="Major League Hacking 2024 Hackathon Season">
                 </img>
-                </a>
+            </a>
             <div className="part">
 
                 <div className="header">

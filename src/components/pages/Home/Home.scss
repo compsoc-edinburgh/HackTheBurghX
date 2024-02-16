@@ -35,6 +35,12 @@ $angle-o: 4px;
   align-items: center;
 }
 
+.no-hover{
+  &:after{
+    display: none;
+  }
+}
+
 .part{
   min-height: calc(100vh - 150px);
   width: 100%;

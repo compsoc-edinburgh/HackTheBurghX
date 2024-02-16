@@ -40,3 +40,59 @@
         margin: 0 auto;
     }
 }
+
+.schedule{
+
+    font-family: $secondary-font;
+    color: $brown;
+    text-align: center;
+    margin-bottom: 80px;
+
+    .day{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 30px;
+        background: repeating-linear-gradient(45deg, rgba(209, 229, 235, 0.5), rgba(209, 229, 235, 0.5) 10px, rgba(245, 236, 219, 0.5) 10px, rgba(245, 236, 219, 0.5) 20px);
+    }
+
+    .events{
+        margin: 0 auto;
+        width: 100%;
+        .event{
+
+            .seperator{
+                width: 0px;
+                height: 100%;
+                border: 2px dashed $yellow;
+            }
+
+            display: grid;
+            grid-template-columns: 1fr 5px 1fr;
+            text-align: left;
+            gap: 3vw;
+            width:100%;
+            margin: 30px 0;
+
+            .left{
+                text-align: right;
+            }
+            
+            .time{
+                font-size: 20px;
+            }
+    
+            .name{
+                font-size: clamp(16px, 2vw, 26px);
+                display: flex;
+                align-items: center;
+              
+            }
+    
+            .venue{
+                font-size: 12px;
+                opacity: 0.7;
+            }
+        }
+
+    }
+}
