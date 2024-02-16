@@ -2,6 +2,29 @@
 $angle: 8px;
 $angle-o: 4px;
 
+@media screen and (max-width:620px) {
+  #mlh-trust-badge{
+    display: none;
+  }
+}
+@media screen and (min-width:620px) {
+  #mlh-trust-badge {
+    display: flex;
+    position:fixed;
+    right: -20px;
+    top:30px;
+    width:15%;
+    max-width: 130px;
+    min-width:60px;
+    z-index:10000;
+    border: none;
+    background: transparent;
+  }
+}
+#mlh-trust-img
+{
+  width: 100%;
+}
 .main-box {
 
 
