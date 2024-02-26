@@ -52,7 +52,7 @@ const CountdownTimer: React.FC<{ targetDate: string }> = ({ targetDate }) => {
 const Home: React.FC = () => {
 
     const [shouldRestart, setShouldRestart] = useState(false);
-    const targetDate = '2024-02-19T12:00:00'; // Set your target date
+    const targetDate = '2024-03-02T12:00:00'; // Set your target date
 
     const [scroll, setScroll] = useState(false);
 
@@ -130,12 +130,12 @@ const Home: React.FC = () => {
                 <div className='inner-box'>
                     {/* <h1>Registration Closes February 19th 12:00pm</h1> */}
                     <CountdownTimer targetDate={targetDate} />
-                    <h1>Registration Closes February 19th 12:00pm</h1>
+                    <h1>Event starts 2nd March | Registrations Closed</h1>
                     <div className="links">
-                        <a href='https://register.2024.hacktheburgh.com/' target='_blank' >
+                        <a className='not-active' href='https://register.2024.hacktheburgh.com/' target='_blank' >
                             Register
                         </a>
-                        <a target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSdWyk7F_E9m90cxkAr1AhJ9-xx_D5_u86ioZg8q3mawX3ydRw/viewform">
+                        <a className = 'not-active' target='_blank' href="https://docs.google.com/forms/d/e/1FAIpQLSdWyk7F_E9m90cxkAr1AhJ9-xx_D5_u86ioZg8q3mawX3ydRw/viewform">
                             Volunteer
                         </a>
                     </div>
